@@ -16,6 +16,8 @@ Prin crearea unor clase specifice (ex: `Tranzactie`, `Formatie`) cu atribute pri
 - **b)** Dându-se $M$ zile de festival și o listă de formații cu nivelul lor de popularitate (de la 1 — cele mai populare, la 3 — cele mai puțin populare), formați seturi de câte 3 trupe din fiecare nivel de popularitate pentru fiecare zi de concert.
 - **c)** Dintr-o listă de $T$ formații, afișați numele acestora în ordine alfabetică pentru a le pune pe un poster.
 
+> 💡 **Ai nevoie de ajutor?** [Ghid pas cu pas pentru Subiectul 1](subiect1/Readme.md)
+
 ---
 
 ## Subiectul 2: Gestiunea Containerelor
