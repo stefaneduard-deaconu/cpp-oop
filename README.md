@@ -1,5 +1,10 @@
 # C++ POO - Curs Privat de Pregătire
 
+## How you sync to GitHub
+> git add .
+> git commit -m 'I solved problem X'
+> git push
+
 Materiale pentru pregătire în C++ Object-Oriented Programming.
 
 ## Lecții
