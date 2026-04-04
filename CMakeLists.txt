@@ -4,5 +4,5 @@ project(cpp_oop)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(cpp_oop
-        subiecte_colocvii/sub1test.cpp
+        subiecte_colocvii/sub9test.cpp
 )
