@@ -70,7 +70,10 @@ public:
             resolution = 0;
         }
         int modificaSemnal(int semnal) {
-            return (semnal / resolution)* resolution;
+            if (resolution == 0) {
+                return semnal;
+            }
+            return (int)(floor((double)semnal / resolution) * resolution);
         }
 
         friend istream& operator >> (istream& in, Bitcrusher& b) {
@@ -81,22 +84,29 @@ public:
 
 class Semnal {
 private:
-    int S, semnale[100000] = {0};
+    int S;
+    int *semnale;
 
 public:
     Semnal() {
         S = 0;
+        semnale = nullptr;
+    }
+
+    ~Semnal() {
+        delete[] semnale;
     }
 
     friend istream &operator>>(istream &in, Semnal &s) {
         in >> s.S;
+        s.semnale = new int[s.S];
         for (int i = 0; i < s.S; i++) {
             in >> s.semnale[i];
         }
         return in;
     }
 
-    void operator |=(Efect *efect) { //   Semnal |= Efect*    deci in main:     semnal |= efecte[i];
+    void operator |=(Efect *efect) {
         for (int i = 0; i < S; i++) {
             semnale[i] = efect-> modificaSemnal(semnale[i]);
         }
@@ -111,12 +121,14 @@ public:
 };
 
 int main() {
-    Efect* efecte[100]; // verificam la rularea testelor daca nu cumva trebuie mai mult de 100
     Semnal semnal;
     cin >> semnal;
+
     int N;
     cin >> N;
-    string tip;
+
+    Efect* efecte[100];
+
     for (int i = 0; i<N; i++) {
         string tip;
         cin >> tip;
@@ -138,9 +150,12 @@ for (int i = 0; i < N;i++) {
 }
 
 cout << semnal << endl;
+
+    for (int i = 0; i < N;i++) {
+        delete efecte[i];
+    }
+    return 0;
 }
-
-
 
 
 

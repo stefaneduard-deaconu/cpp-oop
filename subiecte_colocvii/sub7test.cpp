@@ -74,12 +74,12 @@ friend ostream& operator << (ostream& out, Elev& e) {
     return out;
 }
 
-double operator () (string numeMaterie) const{
+    double operator () (string numeMaterie) const {
     for(int i = 0; i < materii.size();i++){
         Materie m = materii[i];
-       if(m.getNumeMaterie() == numeMaterie){
-           return m.getNota();
-       }
+        if(m.getNumeMaterie() == numeMaterie){
+            return m.getNota();
+        }
     }
     return -1;
 }
